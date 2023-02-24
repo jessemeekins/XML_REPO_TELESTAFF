@@ -1,0 +1,75 @@
+
+		"unitTypeInfoMap": {
+			"RC": {
+				"unitDescription": "Rescue",
+				"cadAssignmentToApaaAssignmentMapping": {
+					"LT": "Fire Lieutenant",
+					"DR": "Fire Driver",
+					"IM": "Inside",
+					"OM": "Outside"
+				}
+			},
+			"PU": {
+				"unitDescription": "Engine",
+				"cadAssignmentToApaaAssignmentMapping": {
+					"LT": "Fire Lieutenant",
+					"DR": "Fire Driver",
+					"NZ": "Nozzle",
+					"HU": "Hookup"
+				}
+			},
+			"TR": {
+				"unitDescription": "Truck",
+				"cadAssignmentToApaaAssignmentMapping": {
+					"LT": "Fire Lieutenant",
+					"DR": "Fire Driver",
+					"IM": "Inside",
+					"OM": "Outside"
+				}
+			},
+			"EU": {
+				"unitDescription": "Ambulance",
+				"cadAssignmentToApaaAssignmentMapping": {
+					"PB": "P2",
+					"PF": "P1"
+				}
+			},
+			"QT": {
+				"unitDescription": "Quint",
+				"cadAssignmentToApaaAssignmentMapping": {
+					"LT": "Fire Lieutenant",
+					"DR": "Fire Driver",
+					"NZ": "Nozzle",
+					"HU": "Hookup"
+				}
+			},
+			"ACA": {
+				"unitDescription": "AirCrash",
+				"cadAssignmentToApaaAssignmentMapping": {
+					"C": "Chief",
+					"DR": "Driver",
+					"X": "Extra"
+				}
+			},
+			"BC": {
+				"unitDescription": "BatChief",
+				"cadAssignmentToApaaAssignmentMapping": {
+					"P": "Chief",
+					"X": "Extra"
+				}
+			},
+			"ES": {
+				"unitDescription": "EMS LT",
+				"cadAssignmentToApaaAssignmentMapping": {
+					"P": "A"
+				}
+			},
+			"DC": {
+				"unitDescription": "COMMAND",
+				"cadAssignmentToApaaAssignmentMapping": {
+					"P": "Chief",
+					"DR": "Driver",
+					"X": "Extra"
+				}
+			}
+		},

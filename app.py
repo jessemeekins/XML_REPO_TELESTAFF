@@ -6,7 +6,7 @@
 ### from XML file. Each Record will be turned into class object        ###
 ### and stored in a local class Dict. Record Objects will be added     ###
 ### to Company class object created from a list of companies in MFD    ###
-### After dictionsaries are made, Record Objects will be added to      ###
+### After dictionaries are made, Record Objects will be added to       ###
 ### Company Object and stored, within their own "self.staff" dict      ###
 ### for further proccessing.                                           ###
 ##########################################################################
@@ -16,17 +16,22 @@
 from Record import *
 from Company import *
 from companies import *
-from datetime import datetime as dt
 
+# Datetime variable to attached time stamps to logging and reaprts
+from datetime import datetime as dt
+NOW = dt.utcnow()
 # Python logging module, basic config to file
 # Full implemintation forthcoming
 import logging
-logging.basicConfig(filename='test_logger.log',level=logging.INFO)
+FORMAT = '%(asctime)s %(clientip)-15s %(user)-8s %(message)s'
+logging.basicConfig(filename='test_logger.log',level=logging.DEBUG, format=FORMAT)
+
+logging.info(f'PROGRAM START: {NOW}')
 
 # Python xml module config and file location to be uploaded and parsed 
 # ET.parse as ET, tree and root are used by convention
 import xml.etree.ElementTree as ET
-tree = ET.parse('/Users/jessemeekins/Documents/VS Code (original)/XML/NEW ROSTER EXPORT Meekins - Fire2023-01-27.xml')
+tree = ET.parse('/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/ROS11 MFD2023-02-23.xml')
 root = tree.getroot()
 
 # Stores all MFD Company Objects for further usage
@@ -42,17 +47,17 @@ personnelDict = {}
 # .get() method to search for the matching value and returning the corisponding object.
 # The Object that is returned bty the query can be 
 
-
+DEBUG = True
 
 class FileProccessing:
     # Initialization takes in no auguements
     def __init__(self) -> None:
         pass
     
-    ####################################################################
-    ####    Class Function used by create_all_record_objects() to,  ####
-    ####    to locate and extract text data from specific XML tags  ####
-    ####################################################################
+    #############################################################################
+    ####    Class Function used by create_all_record_objects() to,           ####
+    ####    to locate and extract text data from specific XML tags           ####
+    #############################################################################
 
     def parse_record(self, record) -> dict:
         # Try/Except returns all data required or defaults to None type  
@@ -95,10 +100,10 @@ class FileProccessing:
             # Adds Company Object to Global Company Dictionary variable for later use
             companyDict[company.name] = company
 
-    ############################################################################
-    ####    Function for looping through all Records in a XML export and    ####
-    #### creating objects utilizing the Records class located in records.py ####
-    ############################################################################
+    ###############################################################################
+    ####    Function for looping through all Records in a XML export and       ####
+    #### creating objects utilizing the Records class located in records.py    ####
+    ###############################################################################
 
     def create_all_record_objects(self) -> None:
         # For loop through children elements with tag <Record> in XML file import
@@ -115,19 +120,57 @@ class FileProccessing:
                 # Adds record dict to Global personnelDict 
                 personnelDict[data['EID']] = newRecord
                 Obj = companyDict.get(newRecord.company_abr, None)
-                print(Obj.name)
+                try:
+                    if DEBUG:
+                        pass
+                except AttributeError as e:
+                    if DEBUG:
+                        pass
+                        #print(f'[{e}] Could not find company: {newRecord.company_abr}')
+                    else:
+                        pass
+                        #logging.error(f'[{e}] Could not find company: {newRecord.company_abr}')
+    
+    # Function to add Record.Record Objects to Company.Companty Object using "+" operation.
+    # Takes Dict and will loop though each Key/Value Pair. The value is the Record.Record 
+    # Object and will be added to the correct Company.Company Object. In doing so will 
+    # automatically update the Company.Company attributes assigned upon initialization. 
+    
+    def add_record_objects_to_companies(self):
+
+        for k,v in personnelDict.items():
+            company = v.company_abr
+            company_obj = companyDict.get(company, None)
+            try:
+                company_obj + v
+            except TypeError as e:
+                pass
+
+
+
 
 run = FileProccessing()
 run.create_apparatus_objects()
 run.create_all_record_objects()
+run.add_record_objects_to_companies()
 
-getter = Get()
-faulkner=getter.get_record('4783')
-harris=getter.get_record('31857')
-engine1 = getter.get_company('E1')
+
+
+
+count = 0
+for k,v in companyDict.items():
+    if v.is_als:
+        count += 1
+        print(v)
+
+
+print(f'[{NOW}] ALS COUNT: {count}')
 
 #%%
-
+medic_count = 0
 for k,v in personnelDict.items():
     if v.paramedic:
-        print(v.name, v.position)
+        medic_count +=1
+        print(v)
+
+print(medic_count)

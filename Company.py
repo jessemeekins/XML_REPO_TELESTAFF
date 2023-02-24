@@ -14,6 +14,9 @@
 # Importing the Record class and all of its functionality
 from Record import *
 
+# Import global DEBUG Setting, will be used in config file
+from .app import DEBUG
+DEBUG = DEBUG
 # Importing all nessecary packages
 # logging will further developed in near future
 import logging
@@ -61,7 +64,7 @@ class Company():
     # engine69 = Company(...)
     # engine69 + jesse
     # This will add a "jesse" object to the Company Objects list
-    def __add__(self, obj:object, DEBUG=False) -> None:
+    def __add__(self, obj:object) -> None:
         # Try/except clause to disregard companies not outlined in the companies lists, i.e. BC's 
         try:
             # First checks if the passed in argument is an Object
@@ -84,7 +87,7 @@ class Company():
         except:
             pass
     # This function allows two object to use the "-" operator to remove Record Object from Company list
-    def __sub__(self, obj:object, DEBUG=False) -> None:
+    def __sub__(self, obj:object) -> None:
         # checks to make sure argument is a ObjectType
         if isinstance(obj, object):
             # Removes record from Company List
@@ -106,7 +109,7 @@ class Company():
 
     # This functions provides "==" operatores amongs Objects. 
     # This function accepts a True/False arugment
-    def __eq__(self, obj:bool, DEBUG=False) -> bool:
+    def __eq__(self, obj:bool) -> bool:
         # Checks if argument is an ObjectType == Boolean value
         if isinstance(obj, bool):
             # Checks if the company and the passed in bollean are equal to each other
@@ -120,7 +123,7 @@ class Company():
             # DEBUG == True
             if DEBUG:
                 # Prints to console
-                print('Object needs to be a bool.')
+                print(f"{Company(__name__)} failed to execute '==' comp..." )
             # DEBUG == False
             else:
                 # Enters error message into log for further debuggin
@@ -128,7 +131,7 @@ class Company():
     
     # Method provides ">" comparatuive funxtionality bwetween objects.
     # Method will be primarily used in the main app.py for business logic rules ect.
-    def __gt__(self, obj: int, DEBUG=False):
+    def __gt__(self, obj: int):
         # Checks if obj is a integer
 
         # Future Error Handling will be good, try/except clasuses with detailed messages,
@@ -144,7 +147,7 @@ class Company():
             # DEBUG == True
             if DEBUG:
                 # Prints to console
-                print('Object needs to be a int.')
+                print(f"{Company(__name__)} failed to execute '>' comp..." )
             # DEBUG == False
             else:
                 # Enters error message into log for further debuggin
@@ -159,27 +162,27 @@ class Company():
     ###   each variable in the class   ###
     ######################################
     
-    def get_name(self, DEBUG=False) -> str:
+    def get_name(self) -> str:
         if DEBUG:
             print(self.name)
         return self.name
     
-    def get_staff(self, DEBUG=False) -> list:
+    def get_staff(self) -> list:
         if DEBUG:
             print(self.staff)
         return self.staff
         
-    def get_medic_count(self, DEBUG=False) -> int:
+    def get_medic_count(self) -> int:
         if DEBUG:
             print(self.medic_count)
         return self.medic_count
 
-    def get_als(self, DEBUG=False) -> bool:
+    def get_als(self) -> bool:
         if DEBUG:
             print(self.is_als)
         return self.is_als
     
-    def get_overstaffed(self, DEBUG=False) -> bool:
+    def get_overstaffed(self) -> bool:
         if DEBUG:
             print(self.overstaffed)
         return self.overstaffed
