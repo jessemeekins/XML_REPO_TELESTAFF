@@ -23,10 +23,9 @@ NOW = dt.utcnow()
 # Python logging module, basic config to file
 # Full implemintation forthcoming
 import logging
-FORMAT = '%(asctime)s %(clientip)-15s %(user)-8s %(message)s'
-logging.basicConfig(filename='test_logger.log',level=logging.DEBUG, format=FORMAT)
 
-logging.info(f'PROGRAM START: {NOW}')
+logging.basicConfig(filename='test_logger.log', level=logging.CRITICAL)
+
 
 # Python xml module config and file location to be uploaded and parsed 
 # ET.parse as ET, tree and root are used by convention
@@ -69,7 +68,10 @@ class FileProccessing:
             # Rank ef employee inXML Record
             rank = record.find('PosJobAbrvCh').text
             # Position of employee in XML Record 1.0 denotes paramedic
-            position = record.find('PosFormulaIDCh').text
+            # Changed to Person Formula ID Field in Person Profile Setting under skill. 
+            # EMT-P 1.1, EMT-A 1.2, EMT-B 1.3 
+            # Current Testing is using 1.0
+            position = record.find('RscFormulaIDCh').text
             # Unit abreviation located in XML Record
             comp = record.find('PUnitAbrvCh').text
             # Start date and time of Record inside XML record
@@ -166,11 +168,3 @@ for k,v in companyDict.items():
 
 print(f'[{NOW}] ALS COUNT: {count}')
 
-#%%
-medic_count = 0
-for k,v in personnelDict.items():
-    if v.paramedic:
-        medic_count +=1
-        print(v)
-
-print(medic_count)
