@@ -14,7 +14,7 @@
 # Python built in library
 # will be implimented further in the near future
 import logging
-
+DEBUG = True
 # Record class that creates objects from individual "<record>" tags in a XML file export.
 # These object represent staffing records added into telestaff during daily operations
 class Record:

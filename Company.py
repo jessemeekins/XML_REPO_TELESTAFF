@@ -13,10 +13,9 @@
 
 # Importing the Record class and all of its functionality
 from Record import *
-
+DEBUG = True
 # Import global DEBUG Setting, will be used in config file
-from .app import DEBUG
-DEBUG = DEBUG
+
 # Importing all nessecary packages
 # logging will further developed in near future
 import logging
@@ -42,7 +41,7 @@ class Company():
 
     # Function returns a string representation of this Object. Fully Customizable.
     def __str__(self) -> str:
-        return f"[{self.name} ALS: {self.is_als}] numParamedics: {self.medic_count} - overStaffed: {self.overstaffed}"
+        return f"[{self.name} ALS: {self.is_als}] numParamedics: {self.medic_count}"
     
     # Defines a human readable representation of the Object if no other methods are called upon the Object
     # calling this method will launch a second func within this func to refresh if Objects values when, 
