@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <span></span>
+    <title>Document</title>
+</head>
+<body id="page-body">
+    <div class="container p-5 my-5 bg-white text-white rounded-3 shadow">
+        <button id="refresh" class='btn-danger rounded-3' type="submit">Refresh</button>
+        <button id="get-count" class='btn-danger rounded-3' type="submit">Get Count</button>
+        <button id="home" class='btn-danger rounded-3' type="submit">Home</button>
+        <button id="contact" type="button" class="btn-danger rounded-3" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Bottom popover">Contact</button>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Address</th>
+                <th scope="col">Phone</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td id="table-name"></td>
+                <td id="table-address"></td>
+                <td id="table-phone"></td>
+              </tr>
+            </tbody>
+          </table>
+
+    </div>
+    <div class="container">
+      <form action="/action_page.php">
+        <label for="fname">First name:</label><br>
+        <input class="rounded-2" type="text" id="fname" name="fname" value="John"><br>
+        <label for="lname">Last name:</label><br>
+        <input class="rounded-1" type="text" id="lname" name="lname" value="Doe"><br><br>
+        <button id="submit" class="btn-danger rounded-3" type="button" value="submit">Submit</button>
+      </form>
+      <div class="card shadow rounded-3 p-4">
+        <h1>{{count}}</h1>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script>
+      // compile the template
+      var template = Handlebars.compile("Handlebars <b>{{doesWhat}}</b>");
+      // execute the compiled template and print the output to the console
+      console.log(template({ doesWhat: "rocks!" }));
+    </script>
+        
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

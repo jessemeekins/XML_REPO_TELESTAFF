@@ -1,0 +1,19 @@
+MFD_ENGINE_COMPANIES_LIST = [
+    f'E{i}' for i in range(1,60)
+]
+MFD_TRUCK_COMPANIES_LIST = [
+    f'T{i}' for i in range(1,31)
+]
+MFD_UNIT_COMPANIES_LIST = [
+    f'U{i}' for i in range(1,35)
+]
+MFD_UNIT_COMPANIES_LIST.append('AMB27')
+
+MFD_SPECIALTY_LIST = [
+    'R1', 'R2', 'R3', 'Q37','Q48','Q54','Q57', 'AT20', 'AT', 'Re', 'A1', 'A2', 'A3'
+]
+MFD_FIELD_CHIEFS = ['BCSUV1', 'BCSUV2', 'BC2', 'BC3', 'BC4', 'BCSUV5', 'BC6', 'BC7', 'BC8', 'BC9', 'BC10', 'BC11', 'Div2', 'Div1']
+
+MISC_ = ['Ba', 'Ai', 'A8', '{Off}']
+
+ALL_MFD_COMPANIES = MFD_TRUCK_COMPANIES_LIST + MFD_ENGINE_COMPANIES_LIST + MFD_SPECIALTY_LIST + MFD_UNIT_COMPANIES_LIST + MFD_FIELD_CHIEFS + MISC_
