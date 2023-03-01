@@ -21,18 +21,3 @@ const counter = getCount.onclick = () => {
 }
 
 
-localStorage.setItem('name', 'Jesse' );
-localStorage.setItem('phone', '901-343-7736' );
-localStorage.setItem('address', '592 South Cox');
-
-
-const tableName = document.getElementById('table-name');
-const tableAddress = document.getElementById('table-address');
-const tablePhone = document.getElementById('table-phone');
-const submitButton = document.getElementById('submit');
-
-tableName.innerHTML = localStorage.getItem('name')
-tableAddress.innerHTML = localStorage.getItem('address')
-tablePhone.innerHTML = localStorage.getItem('phone')
-
-

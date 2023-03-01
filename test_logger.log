@@ -1482,3 +1482,143 @@ INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 05:18:29] "[35m[1mGET /employees/E17 
 INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 05:18:35] "[35m[1mGET /employees/e17 HTTP/1.1[0m" 500 -
 INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 05:18:46] "GET /companies/E17 HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 05:18:57] "GET /companies HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with watchdog (fsevents)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 805-386-414
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 09:59:03] "GET /companies HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 09:59:13] "GET /companies/A1 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/app.py', reloading
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/app.py', reloading
+INFO:werkzeug: * Restarting with watchdog (fsevents)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 805-386-414
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 10:03:43] "[35m[1mGET /companies/als HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/app.py', reloading
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/app.py', reloading
+INFO:werkzeug: * Restarting with watchdog (fsevents)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 805-386-414
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 10:04:42] "[35m[1mGET /companies/als HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/app.py', reloading
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/app.py', reloading
+INFO:werkzeug: * Restarting with watchdog (fsevents)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 805-386-414
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/app.py', reloading
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/app.py', reloading
+INFO:werkzeug: * Restarting with watchdog (fsevents)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 805-386-414
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 10:05:42] "[35m[1mGET /companies/als HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 10:05:48] "GET /companies HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/app.py', reloading
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/app.py', reloading
+INFO:werkzeug: * Restarting with watchdog (fsevents)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 805-386-414
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 10:06:16] "GET /companies HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 10:06:19] "GET /companies/als HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/app.py', reloading
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/app.py', reloading
+INFO:werkzeug: * Restarting with watchdog (fsevents)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 805-386-414
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 10:06:30] "GET /companies/als HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/app.py', reloading
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/app.py', reloading
+INFO:werkzeug: * Restarting with watchdog (fsevents)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 805-386-414
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 10:06:39] "GET /companies/als HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/app.py', reloading
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/app.py', reloading
+INFO:werkzeug: * Restarting with watchdog (fsevents)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 805-386-414
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 10:11:08] "GET /companies/als HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/app.py', reloading
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/app.py', reloading
+INFO:werkzeug: * Restarting with watchdog (fsevents)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 805-386-414
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 10:11:15] "GET /companies/als HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 11:51:30] "GET /companies HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 11:52:14] "GET /companies HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 11:53:06] "GET /companies/E56 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 11:53:32] "[35m[1mGET /companies/E56/staff HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 11:53:44] "GET /companies/E56 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 11:55:33] "[35m[1mGET /personnel HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 11:55:40] "GET /employees HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 11:55:50] "GET /employees/17260 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 11:56:16] "GET /companies HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 11:56:20] "GET /companies/U8 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/app.py', reloading
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/app.py', reloading
+INFO:werkzeug: * Restarting with watchdog (fsevents)
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with watchdog (fsevents)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 805-386-414
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 12:05:58] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 12:06:20] "GET /companies HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 12:06:36] "GET /companies/E16 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 12:06:39] "GET /companies/E54 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 12:06:42] "GET /companies/E55 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 12:06:45] "GET /companies/E56 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 12:06:52] "GET /companies/E21 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 12:07:04] "GET /companies/als HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/app.py', reloading
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/app.py', reloading
+INFO:werkzeug: * Restarting with watchdog (fsevents)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 805-386-414
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 12:07:33] "GET /companies/als HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/app.py', reloading
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/app.py', reloading
+INFO:werkzeug: * Restarting with watchdog (fsevents)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 805-386-414
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 12:08:02] "GET /companies/als HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 12:08:08] "GET /companies/als_count HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 12:08:17] "GET /companies/bls_count HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 12:08:29] "GET /companies/e22 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 12:08:37] "GET /companies/e21 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 12:08:48] "[35m[1mGET /personnel HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 12:08:56] "GET /employees HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 12:09:12] "GET /employees/18872 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 12:09:23] "GET /employees HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 12:10:07] "GET /employees/18652 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 12:10:32] "[35m[1mGET /employees/als_count HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/app.py', reloading
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/app.py', reloading
+INFO:werkzeug: * Restarting with watchdog (fsevents)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 805-386-414
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 12:11:30] "GET /employees/als_count HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 12:11:39] "GET /companies/als_count HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/app.py', reloading
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/app.py', reloading
+INFO:werkzeug: * Restarting with watchdog (fsevents)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 805-386-414
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 12:12:26] "GET /companies/als_count HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 12:12:33] "GET /als_count HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 12:12:54] "GET / HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/app.py', reloading
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/app.py', reloading
+INFO:werkzeug: * Restarting with watchdog (fsevents)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 805-386-414
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/errors.py', reloading
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/errors.py', reloading
+INFO:werkzeug: * Restarting with watchdog (fsevents)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 805-386-414
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 12:17:55] "GET /companies HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 12:18:59] "GET /companies/als_count HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2023 12:21:14] "GET /companies/als HTTP/1.1" 200 -

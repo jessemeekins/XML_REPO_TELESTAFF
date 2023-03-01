@@ -1,9 +1,12 @@
 from flask import Flask
 from utils.data import *
 from functools import reduce
+from errors import errors
 
 
 app = Flask(__name__)
+
+app.register_blueprint(errors)
 
 companyDict = {}
 personnelDict = {}
@@ -13,6 +16,10 @@ XML = FileProccessing(companyDict, personnelDict)
 XML.add_companies_to_dict()
 XML.add_records_to_Dict()
 XML.add_record_objects_to_companies()
+
+@app.route('/')
+def default():
+    return {"Welcome": "XML MFD Server"}
 
 
 @app.route("/companies")
@@ -30,14 +37,16 @@ def single_company(company):
     obj = companyDict.get(company)
     return obj
         
-
-@app.route("/companies/als_count", methods=["GET", "POST"])
+@app.route('/als_count', methods=['GET'])
+@app.route('/employees/als_count', methods=['GET'])
+@app.route("/companies/als_count", methods=["GET"])
 def custom():
     num = len(list(filter(lambda x: x["ALS"] == True, companyDict.values())))
     return {"ALS_COUNT": num} 
 
-
-@app.route("/companies/bls_count")
+@app.route('/bls_count', methods=['GET'])
+@app.route('/employees/bls_count', methods=['GET'])
+@app.route("/companies/bls_count", methods=['GET'])
 def bls_apparatus_list():
     num = len(list(filter(lambda x: x["ALS"] == False, companyDict.values())))
     return {"BLS_COUNT": num} 

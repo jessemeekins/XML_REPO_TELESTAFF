@@ -57,10 +57,6 @@ You should see your server boot up, and should be accessible as before.
 
 ## Developing with the template
 
-To develop the template for your own project, you'll need to make sure to [create your
-own repository from this template](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template) 
-and then install the project's development dependencies. You can do this with:
-
 ```bash
 pip install -r requirements/develop.txt
 ```
