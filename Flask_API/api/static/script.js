@@ -50,7 +50,46 @@ const rmCounter = rmBtnCount.onclick = () => {
     console.log(count)
 }
 
+const addPeopleButton= document.getElementById('add-people-count');
+const rmPeopleButton = document.getElementById('rm-people-count');
+let peopleCount = document.getElementById('num-people').innerText;
+let newPeopleCount = document.getElementById('num-people');
 
+
+const addPeople = addPeopleButton.onclick = () => {
+    peopleCount++;
+    newPeopleCount.innerHTML = peopleCount;
+    console.log(count)
+}
+const rmPeople = rmPeopleButton.onclick = () => {
+    peopleCount--;
+    newPeopleCount.innerHTML = peopleCount;
+    console.log(count)
+}
+
+
+const addMedicButton= document.getElementById('add-medic-count');
+const rmMedicButton = document.getElementById('rm-medic-count');
+let medicCount = document.getElementById('num-medics').innerText;
+let newMedicCount = document.getElementById('num-medics');
+
+
+const addMedic = addMedicButton.onclick = () => {
+    medicCount++;
+    newMedicCount.innerHTML = medicCount;
+    console.log(count)
+}
+const rmMedic = rmMedicButton.onclick = () => {
+    medicCount--;
+    newMedicCount.innerHTML = medicCount;
+    console.log(count)
+}
+
+const freshButton = document.getElementById('refresher');
+
+const refresher = freshButton.onclick = () => {
+    window.location.reload();
+} 
 
 
 

@@ -1,27 +1,42 @@
 * {
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(232,232,232); 
-  }
-  
- .table {
-    max-height: 75%;
- }
+   box-sizing: border-box;
+   justify-content: flex-start;
+}
 
- .card {
-    width: 18rem;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 10px;
- }
- .container {
-    background-color: white;
-    
- }
- .scrollable {
-    height: 500px;
-    overflow: scroll;
- }
+body {
+   font-family: Arial, Helvetica, sans-serif;
+   background-color: rgb(232,232,232); 
+}
+
+.table {
+   max-height: 75%;
+}
+
+.card {
+   width: auto;
+   max-width: 18rem;
+   justify-content: center;
+   align-items: center;
+   box-shadow: 50px;
+   text-align: center;
+}
+
+.card :hover {
+   transition: 0.3ms;
+}
+
+.container {
+   background-color: white;
+   border-radius: 4px;
+}
+
+.scrollable {
+   height: 500px;
+   overflow: scroll;
+}
+img {
+   height: 35px;
+   width: 35px;
+   justify-content: start;
+   
+}
