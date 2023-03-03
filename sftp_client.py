@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 import sys
 import paramiko
 import logging
