@@ -27,42 +27,45 @@ def SFTP(host_name, port, username, password, filepath, localpath, method="GET")
             transport = paramiko.Transport((host_name,port))
         except:
             e = sys.exc_info()[0]
-            logging.ERROR(f'[paramiko.Transport]: {e}.')
+            logging.error(f'[paramiko.Transport]: {e}.')
         
         try:
             transport.connect(None,username,password)
         except:
             e = sys.exc_info()[0]
-            logging.ERROR(f'[transport.connect]: {e}.')
+            logging.error(f'[transport.connect]: {e}.')
 
         try:
             sftp = paramiko.SFTPClient.from_transport(transport)
         except:
             e = sys.exc_info()[0]
-            logging.ERROR(f'[paramiko.SFTPClient.from_transport]: {e}.')
+            logging.error(f'[paramiko.SFTPClient.from_transport]: {e}.')
         
         if method == 'GET':
             try:
                 sftp.get(filepath,localpath)
             except:
                 e = sys.exc_info()[0]
-                logging.ERROR(f'[sftp.get]: {e}.')
+                logging.error(f'[sftp.get]: {e}.')
         else:
             try:
                 sftp.put(localpath,filepath)
             except:
                 e = sys.exc_info()[0]
-                logging.ERROR(f'[sftp.put]: {e}.')
+                logging.error(f'[sftp.put]: {e}.')
 
         try:
-            if sftp: sftp.close()
-            if transport: transport.close()
+            if sftp: 
+                sftp.close()
+            if transport: 
+                transport.close()
         except:
             e = sys.exc_info()[0]
-            logging.ERROR(f'[CONNECTION CLOSED]: {e}.')
+            logging.error(f'[CONNECTION CLOSED]: {e}.')
+            
 
     except Exception as e:
-        logging.ERROR(f'[{now}] Failure in main function: {e}.')
+        logging.error(f'[{now}] Failure in main function: {e}.')
 
 
 if __name__ == '__main__':
