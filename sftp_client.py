@@ -22,12 +22,12 @@ METHOD = 'GET'
 FILEPATCH = '/file/path/to/retrieve'
 LOCALPATH = '/file/path/to/save'
 
+# Paramiko Library ---> https://docs.paramiko.org/en/stable/api/sftp.html
 # Function to Established connection abnd retrieve files on remote server following STFP protocal
 def SFTP(host_name, port, username, password, filepath, localpath, method="GET"):
     # Log initial function call
     logging.info(f'[{now}]: SFTP INITIALIZED!!!')
     # Try/excpet code block
-    # Paramiko Library ---> https://docs.paramiko.org/en/stable/api/sftp.html
     try:
         # Establishes SSH Stream to a Socket or Socket like Object
         transport = paramiko.Transport((host_name,port))
