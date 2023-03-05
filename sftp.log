@@ -1,0 +1,19 @@
+INFO:root:[2023-03-04 13:09:25.402482]: SFTP INITIALIZED!!!
+ERROR:root:[2023-03-04 13:09:25.402482] Failure in main function: Unable to connect to 192.168.1.244: [Errno 61] Connection refused.
+INFO:root:[2023-03-04 13:09:25.402482]: SFTP SUCCESS!!!
+INFO:root:[2023-03-04 13:11:33.335750]: SFTP INITIALIZED!!!
+ERROR:root:[2023-03-04 13:11:33.335750] Failure in SFTP function: Unable to connect to 192.168.1.244: [Errno 61] Connection refused.
+INFO:root:[2023-03-04 13:11:33.335750]: SFTP COMPLETE
+INFO:root:[2023-03-04 13:15:07.519547]: SFTP INITIALIZED!!!
+ERROR:root:[2023-03-04 13:15:07.519547] Failure in SFTP function: Unable to connect to 192.168.1.244: [Errno 61] Connection refused.
+INFO:root:[2023-03-04 13:15:07.519547]: SFTP COMPLETE
+INFO:root:[2023-03-04 13:22:15.054439]: SFTP INITIALIZED!!!
+ERROR:root:[2023-03-04 13:22:15.054439] Failure in SFTP function: Unable to connect to 192.168.1.244: [Errno 61] Connection refused.
+INFO:root:[2023-03-04 13:22:15.054439]: SFTP COMPLETE
+INFO:root:[2023-03-04 13:39:56.827383]: SFTP INITIALIZED!!!
+ERROR:root:SSHClient ERROR: [Errno None] Unable to connect to port 22 on 192.168.1.244
+ERROR:root:[2023-03-04 13:39:56.827383] Failure in SFTP function: Unable to connect to 192.168.1.244: [Errno 61] Connection refused.
+INFO:root:[2023-03-04 13:39:56.827383]: SFTP COMPLETE
+INFO:root:[2023-03-05 08:44:03.365044]: SFTP INITIALIZED!!!
+ERROR:root:SSHClient ERROR: [Errno None] Unable to connect to port 22 on 192.168.1.244
+INFO:root:[2023-03-05 08:44:03.365044]: SFTP COMPLETE
