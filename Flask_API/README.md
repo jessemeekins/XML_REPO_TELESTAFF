@@ -6,7 +6,7 @@ project. It includes a basic project structure and 'seed' files for functional a
 non-function testing, a basic application structure (including error-handling 
 blueprint), and a few assorted 'getting started' files too.
 
-The template has been set up for use with Python >= 3.7 and [Docker](https://www.docker.com/). 
+The template has been set up for use with Python >= 3.10.8 and [Docker](https://www.docker.com/). 
 
 ## Running locally
 
