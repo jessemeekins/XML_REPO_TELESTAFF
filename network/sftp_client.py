@@ -7,7 +7,7 @@ import logging
 import paramiko
 from datetime import datetime as dt
 
-# Defines current time and date.
+# Current time and date.
 now = dt.now()
 # Logging for debuggin, and quality control
 logging.basicConfig(filename='sftp.log', level=logging.DEBUG)
@@ -15,47 +15,55 @@ logging.basicConfig(filename='sftp.log', level=logging.DEBUG)
 
 ### Function Variables: Change variables here, pre loaded into function below 
 HOST_NAME = '192.168.1.244' # --->  Dell PowerEdge R620 on my local network
-PORT = 22   
+PORT = 22 # ---> Linux Ubuntu Default SSH Port   
 USERNAME = ''
 PASSWORD = ''
 METHOD = 'GET'  
-FILEPATH = 'test.txt'
-LOCALPATH = '/home/jesse/Desktop'
+FILEPATH = '/Desktop/test.txt'
+LOCALPATH = '/home/Desktop'
 
-# Paramiko Library ---> https://docs.paramiko.org/en/stable/api/sftp.html
-# Function to Established connection abnd retrieve files on remote server following STFP protocal
+# Establishes connection to upload or download  files on remote server following Paramiko's STFP functionality
+# Paramiko Documentation ---> https://docs.paramiko.org/en/stable/api/sftp.html <---
 def SFTP(host_name, port, username, password, filepath, localpath, command=None, method="GET"):
     # Log initial function call
     logging.info(f'[{now}]: SFTP INITIALIZED!!!')
-    # Try/excpet code block
+    # Try/excpet code block 
     try:
         # Establishes SSH Stream to a Socket or Socket like Object
-        try:
-            client = paramiko.SSHClient()
-            client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-            client.connect(host_name, port, username, password)
-            logging.info('SSHClient: Success')
+        client = paramiko.SSHClient()
+        # Possibley change to load_system_host_keys() depending on the network? 
+        client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+        # Connect to the client
+        client.connect(host_name, port, username, password)
+        logging.info('SSHClient: Success')
 
-            sftp = client.open_sftp()
+        # Defines a new SFTP connection on top off the SSH client
+        sftp = client.open_sftp()
 
-            if method == 'GET':
+        # Function arg 'method' defaulted to 'GET'
+        if method == 'GET':
+            try:
                 sftp.get(filepath, localpath)
                 logging.info(f'[{now}]: client SFTP download success')
                 sftp.close()
-            else:
+            except Exception as e: 
+                logging.error(f'[{now}]: SFTP GET failed: {e}')
+        # If SFTP arg 'method' set to 'PUT', upload will be attempted.
+        else:
+            try:
                 sftp.put(localpath, filepath)
                 logging.info(f"[{now}]: client SFTP upload success")
                 sftp.close
+            except Exception as e: 
+                logging.error(f'[{now}]: SFTP PUT failed: {e}')
 
-            _, stdout, stderr = client.exec_command(command)
-            output = stdout.readlines() + stderr.readlines()
-            if output:
-                logging.info(f"[{now}]")
-                for line in output:
-                    logging.info(line.strip())
-
-        except Exception as e:
-            logging.error(f'SSHClient ERROR: {e}')
+        # Returns tuple, execute a command on remote machine, (non functioning)
+        _, stdout, stderr = client.exec_command(command)
+        output = stdout.readlines() + stderr.readlines()
+        if output:
+            logging.info(f"[{now}]")
+            for line in output:
+                logging.info(line.strip())
 
         # If no connection made
         else:
