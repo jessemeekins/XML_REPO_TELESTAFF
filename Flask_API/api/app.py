@@ -83,5 +83,4 @@ def single_employee_detail(eid, key):
 
 
 if __name__ == '__main__':
-    print(companyDict['PU007'])
     app.run(debug=True)
