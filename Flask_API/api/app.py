@@ -21,7 +21,7 @@ XML.add_record_objects_to_companies()
 def default():
     ALS_COUNT = len(list(filter(lambda x: x["ALS"] == True, companyDict.values())))
     BLS_COUNT = len(list(filter(lambda x: x["ALS"] == False, companyDict.values())))
-    num_medics = len(list(filter(lambda x: x["position"] == '1.0', personnelDict.values())))
+    num_medics = len(list(filter(lambda x: x["position"] == '1.1', personnelDict.values())))
     num_people = len(list(personnelDict))
     return render_template(
         'index.html', 
@@ -81,4 +81,5 @@ def single_employee_detail(eid, key):
 
 
 if __name__ == '__main__':
+    print(personnelDict)
     app.run(debug=True)

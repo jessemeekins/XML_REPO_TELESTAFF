@@ -165,8 +165,8 @@
   </div>
 
   <div class="row">
-    <div class="p-5 rounded-3 col">
-      <div class="scrollable">
+    <div class="p-5 col">
+      <div class="scrollable rounded-3">
         <div class="container">
           <table class="table overflow-scroll">
             <thead>
@@ -200,8 +200,8 @@
         </div>
       </div>
     </div>
-    <div class="p-5 rounded-3 col">
-      <div class="scrollable">
+    <div class="p-5 col">
+      <div class="scrollable rounded-3">
 
         <div class="container shadow">
           <table class="table">
@@ -220,10 +220,15 @@
                 <th scope="row">{{ p.company_abr }}</th>
                 <th scope="row">{{ _ }}</th>
                 <td id="table-phone">{{ p.name}}</td>
-                {% if p.position == '1.0' %}
+                {% if p.position == '1.1' %}
                 <td id="table-address">{{ p.rank }}</td>
                 <td>
                   <div class="badge bg-primary">Paramedic</div>
+                </td>
+                {% elif p.position == '1.2' %}
+                <td id="table-address">{{ p.rank }}</td>
+                <td>
+                  <div class="badge bg-danger">Advanced</div>
                 </td>
                 {% else %}
                 <td id="table-address">{{ p.rank }}</td>
