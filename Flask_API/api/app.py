@@ -1,19 +1,22 @@
-from flask import Flask, render_template
 from utils.data import *
-from functools import reduce
 from errors import errors
+from flask import Flask, render_template
 
 
 app = Flask(__name__)
 
 app.register_blueprint(errors)
 
+
+# GLOBAL DICT THAT HOLDS COMPANIES AND PEROSNNEL RECORDS
 companyDict = {}
 personnelDict = {}
 
 XML = FileProccessing(companyDict, personnelDict)
 
-XML.add_companies_to_dict()
+from utils.companies import FIRST_RESPONERS_COMPANIES
+
+XML.add_companies_to_dict(FIRST_RESPONERS_COMPANIES)
 XML.add_records_to_Dict()
 XML.add_record_objects_to_companies()
 
@@ -32,7 +35,6 @@ def default():
         num_people = num_people,
         num_medics = num_medics
     )
-
 
 @app.route("/companies")
 def index():  
@@ -81,5 +83,5 @@ def single_employee_detail(eid, key):
 
 
 if __name__ == '__main__':
-    print(personnelDict)
+    print(companyDict['PU007'])
     app.run(debug=True)

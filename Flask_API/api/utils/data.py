@@ -50,10 +50,10 @@ class FileProccessing:
         self.company_dictionary = company_dictionary
         self.personnel_dictionary = personnel_dictionary
     
-    #############################################################################
-    ####    Class Function used by create_all_record_objects() to,           ####
-    ####    to locate and extract text data from specific XML tags           ####
-    #############################################################################
+#############################################################################
+####    Class Function used by create_all_record_objects() to,           ####
+####    to locate and extract text data from specific XML tags           ####
+#############################################################################
 
     def parse_record(self, record) -> dict:
         # Try/Except returns all data required or defaults to None type  
@@ -64,18 +64,17 @@ class FileProccessing:
             name = record.find('RscMasterNameCh').text
             # Rank of employee 
             rank = record.find('PosJobAbrvCh').text
-
             # Position of employee in XML Record 1.0 denotes paramedic
             # Value can be changed in Person Formula ID Field in Person Profile Settings under skill. 
             # EMT-P -> 1.1, EMT-A -> 1.2, EMT-B -> 1.3 
             # Current Testing is using 1.0
-
             try:
                 # RscFormulaID maps back to Telestaff Person Formula ID, this will give license level
                 position = record.find('RscFormulaIDCh').text
             except:
                 # if RscFormulaID isnt available, Pull PosFormulaID -> Nozzle, Hookup ect.
                 position = record.find('PosFormulaIDCh').text
+            paycode = record.find('WstatAbrvCh').text
             # Unit abreviation 
             comp = record.find('PUnitAbrvCh').text
             # Start date and time 
@@ -83,7 +82,7 @@ class FileProccessing:
             # End date and time 
             end = record.find('ShiftEndDt').text
             # Return a dictionary to be later added to the class dictionary self.personnelDict
-            data = {'EID':eid, 'NAME':name, 'RANK':rank, 'POSITION':position, 'COMP':comp, 'START':start, 'END': end}
+            data = {'EID':eid, 'NAME':name, 'RANK':rank, 'POSITION':position, 'PAYCODE': paycode, 'COMP':comp, 'START':start, 'END': end}
 
             return data
         
@@ -96,15 +95,15 @@ class FileProccessing:
             # Returning Nonetype, record will not be added to class dict
             return None
                 
-    ###############################################################################
-    ####    Function for looping through all Apparatus List in comapnies.py,   ####
-    ####  creating objects utilizing the Company class located in company.py   ####
-    ###############################################################################
+###############################################################################
+####    Function for looping through all Apparatus List in comapnies.py,   ####
+####  creating objects utilizing the Company class located in company.py   ####
+###############################################################################
     
-    def add_companies_to_dict(self) -> None:
-        for company in ALL_MFD_COMPANIES: 
+    def add_companies_to_dict(self, COMPANIES: list) -> None:
+        for company in COMPANIES: 
             # Adds Company Object to Global Company Dictionary variable for later use
-            self.company_dictionary[company] = {"ALS": False, "medic_count": 0, "staff": []}
+            self.company_dictionary[company] = {"ALS": False, "medic_count": 0, "staff": [], 'FTO': False}
 
     def create_apparatus_objects(self, data: dict) -> object:
         # For Loop through companies listed in "from companies import *" -> companies.py
@@ -118,10 +117,10 @@ class FileProccessing:
                 print('ERROR: Apparatus Obj')
                 pass
 
-    ###############################################################################
-    ####    Function for looping through all Records in a XML export and       ####
-    #### creating objects utilizing the Records class located in records.py    ####
-    ###############################################################################
+###############################################################################
+####    Function for looping through all Records in a XML export and       ####
+#### creating objects utilizing the Records class located in records.py    ####
+###############################################################################
     
     def add_records_to_Dict(self):
         # For loop through children elements with tag <Record> in XML file import
@@ -132,7 +131,7 @@ class FileProccessing:
 
             if data != None:
                 # Adds record dict to Global personnelDict 
-                self.personnel_dictionary[data['EID']] = {"eid": data['EID'] ,"name": data['NAME'], "rank": data['RANK'], "position": data['POSITION'], "company_abr": data['COMP'], "start": data['START'], "end": data["END"]}
+                self.personnel_dictionary[data['EID']] = {"eid": data['EID'] ,"name": data['NAME'], "rank": data['RANK'], "position": data['POSITION'], "paycode": data['PAYCODE'], "company_abr": data['COMP'], "start": data['START'], "end": data["END"]}
                 try:
                     if DEBUG:
                         pass
@@ -165,10 +164,10 @@ class FileProccessing:
                 print('ERROR: Dict Object required.')
                 
     
-    # Function to add Record.Record Objects to Company.Companty Object using "+" operation.
-    # Takes Dict and will loop though each Key/Value Pair. The value is the Record.Record 
-    # Object and will be added to the correct Company.Company Object. In doing so will 
-    # automatically update the Company.Company attributes assigned upon initialization. 
+# Function to add Record.Record Objects to Company.Companty Object using "+" operation.
+# Takes Dict and will loop though each Key/Value Pair. The value is the Record.Record 
+# Object and will be added to the correct Company.Company Object. In doing so will 
+# automatically update the Company.Company attributes assigned upon initialization. 
     
     def add_record_objects_to_companies(self) -> None:
         # Loops through person object dictionary
@@ -179,6 +178,10 @@ class FileProccessing:
             comp_obj = self.company_dictionary.get(company_name, None)
             # Try/Except
             try:
+                if value['paycode'] == 'FTO':
+
+                    print(f'FTO --> {company_name}')
+                    comp_obj['FTO'] = True
                 # Adds personnel Dict to companyDict's List object
                 comp_obj['staff'].append(value)
                 # checking for 1.1 -> EMT-P
@@ -187,6 +190,7 @@ class FileProccessing:
                     comp_obj['ALS'] = True
                     # Increases medic count by 1
                     comp_obj['medic_count'] += 1
+
             # Saves an error in variable "e"
             except TypeError as e:
                 logging.debug(f"[ERROR] {company_name} not found. 'add_record_objects_to_companies'.")
