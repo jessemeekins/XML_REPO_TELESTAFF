@@ -31,7 +31,7 @@ logging.basicConfig(filename='test_logger.log', level=logging.CRITICAL)
 # Python xml module config and file location to be uploaded and parsed 
 # ET.parse as ET, tree and root are used by convention
 import xml.etree.ElementTree as ET
-tree = ET.parse('Flask_API/api/.gitignor/XML EXPORT 3_7_22.xml')
+tree = ET.parse('XML_EXPORT_DATA/XML EXPORT 3_7_22.xml')
 root = tree.getroot()
 
 
