@@ -26,170 +26,200 @@
       </div>
     </div>
     
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <div class="container-fluid">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" href="#"><button id="home" class='btn-danger rounded-3' type="submit">Home</button></a>
-        </li>
-        <li class="nav-item">
-          <a id="refresher" class="nav-link" href="#"><button id="refresh" class='btn-danger rounded-3' type="submit">Refresh</button></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"><button id="count" class='btn-danger rounded-3' type="submit">Add Count</button></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"><button id="contact" type="button" class="btn-danger rounded-3" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Bottom popover">Contact</button></a>
-        </li>
-      </ul>
-      <div class="nav-item justify-content-end">
-        <div id="nav-date" class="nav-clock text-white justify-content-end"><h4></h4></div>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <div class="container-fluid">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#"><button id="als-count" class='btn btn-danger rounded-3 active' onclick="filterSelection('alsCounts')" type="submit">ALS Counts</button></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><button id="off-codes" class='btn btn-danger rounded-3' type="submit" onclick="filterSelection('offContent')">Off Codes</button></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><button id="chief-info" type="button" class="btn btn-danger rounded-3" onclick="filterSelection('chiefContent')">Chiefs</button></a>
+          </li>
+        </ul>
+        <div class="nav-item justify-content-end">
+          <div id="nav-date" class="nav-clock text-white justify-content-end"><h4></h4></div>
+        </div>
+        <div class="nav-item justify-content-end">
+          <a id="refresher" class="nav-link justify-content-end" href="#"><button id="refresh" class='btn-danger rounded-3' type="submit">Refresh</button></a>
+        </div>
+        <div class="nav-item justify-content-end">
+          <div id="nav-clock" class="nav-clock text-white justify-content-end"><h4></h4></div>
+        </div>
       </div>
-      <div class="nav-item justify-content-end">
-        <div id="nav-clock" class="nav-clock text-white justify-content-end"><h4></h4></div>
-      </div>
-    </div>
-  </nav>
+    </nav>
 
-  <div class="row">
-    <div class="p-5 rounded-3 col">
-      <div class="card shadow">
-        <div class="card-body">
-          <h6>ALS Count</h6>
-          <h1 id="als-count">{{ ALS_COUNT }}</h1>
-        </div>
-        <div class="card-footer bg-transparent border-0">
-          <button title="comp-add" id="add-als-count" class='btn-danger rounded-3' type="submit">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-fill-add" viewBox="0 0 16 16">
-              <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
-              <path d="M2 13c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Z"/>
-            </svg>
-          </button>
-          <button title="comp-rm" id="rm-als-count" class='btn-danger rounded-3' type="submit">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-dash" viewBox="0 0 16 16">
-              <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7ZM11 12h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1 0-1Zm0-7a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
-              <path d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z"/>
-            </svg>
-          </button>
+    <div class="filterContainer">
+      <div class="filterDiv alsCounts">
+        <div class="row">
+          <div class="p-5 rounded-3 col">
+          <div class="card shadow">
+                <div class="card-body">
+                    <h6>ALS Count</h6>
+                    <h1>{{ ALS_COUNT }}</h1>
+                </div>
+                <div class="card-footer bg-transparent border-0">
+                  <button title="comp-add" id="add-als-count" class='btn-danger rounded-3' type="submit">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-fill-add" viewBox="0 0 16 16">
+                      <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+                      <path d="M2 13c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Z"/>
+                    </svg>
+                  </button>
+                  <button title="comp-rm" id="rm-als-count" class='btn-danger rounded-3' type="submit">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-dash" viewBox="0 0 16 16">
+                      <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7ZM11 12h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1 0-1Zm0-7a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
+                      <path d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+          </div>
+          <div class="p-5 rounded-3 col">
+            <div class="card shadow">
+              <div class="card-body">
+                <h6>BLS Count</h6>
+                <h1 id="bls-count">{{ BLS_COUNT }}</h1>
+              </div>
+              <div class="card-footer bg-transparent border-0">
+                <button title="bls-add" id="add-bls-count" class='btn-danger rounded-3' type="submit">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-fill-add" viewBox="0 0 16 16">
+                    <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+                    <path d="M2 13c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Z"/>
+                  </svg>
+                </button>
+                <button title="bls-rm" id="rm-bls-count" class='btn-danger rounded-3' type="submit">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-dash" viewBox="0 0 16 16">
+                    <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7ZM11 12h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1 0-1Zm0-7a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
+                    <path d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="p-5 rounded-3 col">
+            <div class="card shadow">
+              <div class="card-body">
+                  <h6>Counter</h6>
+                  <h1 id="counter">0</h1>
+                <div class="card-footer bg-transparent border-0">
+                  <button title="counter-add" id="add-counter-count" class='btn-danger rounded-3' type="submit">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-fill-add" viewBox="0 0 16 16">
+                      <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+                      <path d="M2 13c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Z"/>
+                    </svg>
+                  </button>
+                  <button title="counter-rm" id="rm-counter-count" class='btn-danger rounded-3' type="submit">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-dash" viewBox="0 0 16 16">
+                      <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7ZM11 12h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1 0-1Zm0-7a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
+                      <path d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p-5 rounded-3 col">
+            <div class="card shadow">
+              <div class="card-body">
+                <h6># Records</h6>
+                <h1 id="num-people">{{ num_people }}</h1>
+              </div>
+              <div class="card-footer bg-transparent border-0">
+                <button title="pp-add" id="add-people-count" class='btn-danger rounded-3' type="submit">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-fill-add" viewBox="0 0 16 16">
+                    <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+                    <path d="M2 13c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Z"/>
+                  </svg>
+                </button>
+                <button title="pp-add" id="rm-people-count" class='btn-danger rounded-3' type="submit">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-dash" viewBox="0 0 16 16">
+                    <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7ZM11 12h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1 0-1Zm0-7a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
+                    <path d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="p-5 rounded-3 col">
+            <div class="card shadow">
+              <div class="card-body">
+                <h6># Paramedics</h6>
+                <h1 id="num-medics">{{ num_medics }}</h1>
+              </div>
+              <div class="card-footer bg-transparent border-0">
+                <button title="medics-add" id="add-medic-count" class='btn-danger rounded-3' type="submit">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-fill-add" viewBox="0 0 16 16">
+                    <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+                    <path d="M2 13c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Z"/>
+                  </svg>
+                </button>
+                <button title="medics-rm" id="rm-medic-count" class='btn-danger rounded-3' type="submit">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-dash" viewBox="0 0 16 16">
+                    <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7ZM11 12h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1 0-1Zm0-7a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
+                    <path d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="p-5 rounded-3 col">
-      <div class="card shadow">
-        <div class="card-body">
-          <h6>BLS Count</h6>
-          <h1 id="bls-count">{{ BLS_COUNT }}</h1>
-        </div>
-        <div class="card-footer bg-transparent border-0">
-          <button title="bls-add" id="add-bls-count" class='btn-danger rounded-3' type="submit">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-fill-add" viewBox="0 0 16 16">
-              <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
-              <path d="M2 13c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Z"/>
-            </svg>
-          </button>
-          <button title="bls-rm" id="rm-bls-count" class='btn-danger rounded-3' type="submit">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-dash" viewBox="0 0 16 16">
-              <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7ZM11 12h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1 0-1Zm0-7a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
-              <path d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z"/>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="p-5 rounded-3 col">
-      <div class="card shadow">
-        <div class="card-body">
-          <h6>Counter</h6>
-          <h1 id="counter">0</h1>
-        </div>
-        <div class="card-footer bg-transparent border-0">
-          <button title="counter-add" id="add-counter-count" class='btn-danger rounded-3' type="submit">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-fill-add" viewBox="0 0 16 16">
-              <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
-              <path d="M2 13c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Z"/>
-            </svg>
-          </button>
-          <button title="counter-rm" id="rm-counter-count" class='btn-danger rounded-3' type="submit">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-dash" viewBox="0 0 16 16">
-              <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7ZM11 12h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1 0-1Zm0-7a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
-              <path d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z"/>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="p-5 rounded-3 col">
-      <div class="card shadow">
-        <div class="card-body">
-          <h6># Records</h6>
-          <h1 id="num-people">{{ num_people }}</h1>
-        </div>
-        <div class="card-footer bg-transparent border-0">
-          <button title="pp-add" id="add-people-count" class='btn-danger rounded-3' type="submit">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-fill-add" viewBox="0 0 16 16">
-              <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
-              <path d="M2 13c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Z"/>
-            </svg>
-          </button>
-          <button title="pp-add" id="rm-people-count" class='btn-danger rounded-3' type="submit">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-dash" viewBox="0 0 16 16">
-              <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7ZM11 12h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1 0-1Zm0-7a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
-              <path d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z"/>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="p-5 rounded-3 col">
-      <div class="card shadow">
-        <div class="card-body">
-          <h6># Paramedics</h6>
-          <h1 id="num-medics">{{ num_medics }}</h1>
-        </div>
-        <div class="card-footer bg-transparent border-0">
-          <button title="medics-add" id="add-medic-count" class='btn-danger rounded-3' type="submit">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-fill-add" viewBox="0 0 16 16">
-              <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
-              <path d="M2 13c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Z"/>
-            </svg>
-          </button>
-          <button title="medics-rm" id="rm-medic-count" class='btn-danger rounded-3' type="submit">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-dash" viewBox="0 0 16 16">
-              <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7ZM11 12h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1 0-1Zm0-7a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
-              <path d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z"/>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="row">
-    <div class="p-5 col">
-      <div class="scrollable rounded-3">
-        <div class="container">
-          <table class="table overflow-scroll">
-            <thead>
-              <tr>
-                <th scope="col">Comapny</th>
-                <th scope="col">ALS Status</th>
-                <th scope="col">Medic Count</th>
-                <th scope="col">Comp.</th>
-              </tr>
-            </thead>
-            <tbody>
-              {% for k, v in companies.items() %}
+    <div class="row">
+      <div class="p-5 col">
+        <div class="p-2 flex-column">
+          <label title="comp-search" type="text">
+            Search
+            <input id="comp-search-input" class="input-group rounded-3" type="text" placeholder="">
+          </label>
+        </div>
+        <div class="scrollable rounded-3">
+          <div class="container">
+            <table class="table overflow-scroll">
+              <thead>
                 <tr>
-                  <th scope="row">{{ k }}</th>
-                  {% if v.ALS %}
-                    <td>
-                      <div class="badge bg-primary">ALS</div>
-                    </td>
-                    <td id="table-address">{{ v.medic_count }}</td>
-                    
-                    <td>
-                      <div class="badge bg-info">
-                        {% for i in v.staff %}
+                  <th scope="col">Comapny</th>
+                  <th scope="col">ALS Status</th>
+                  <th scope="col">Medic Count</th>
+                  <th scope="col">Comp.</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for k, v in companies.items() %}
+                  <tr>
+                    <th scope="row">{{ k }}</th>
+                    {% if v.ALS %}
+                      <td>
+                        <div class="badge bg-primary">ALS</div>
+                      </td>
+                      <td id="table-address">{{ v.medic_count }}</td>
+                      
+                      <td>
+                        <div class="badge bg-info">
+                          {% for i in v.staff %}
+                            {% if i.position == '1.1' %}
+                            +
+                            {% elif i.position == '1.2' %}
+                            *
+                            {% elif i.position == '1.3' %}
+                            ^
+                            {% else %}
+                            _
+                            {% endif %}
+                          {% endfor %}
+                        </div>
+                      </td>
+                      
+                    {% else %}
+                      <td>
+                        <div class="badge bg-success">BLS</div>
+                      </td>
+                      <td id="table-address">{{ v.medic_count }}</td>
+                      <td>
+                        <div class="badge bg-dark">
+                          {% for i in v.staff %}
                           {% if i.position == '1.1' %}
                           +
                           {% elif i.position == '1.2' %}
@@ -199,111 +229,91 @@
                           {% else %}
                           _
                           {% endif %}
-                        {% endfor %}
-                      </div>
-                    </td>
-                    
-                  {% else %}
-                    <td>
-                      <div class="badge bg-success">BLS</div>
-                    </td>
-                    <td id="table-address">{{ v.medic_count }}</td>
-                    <td>
-                      <div class="badge bg-dark">
+                          {% endfor %}
+                        </div>
+                      </td>
+                    {% endif %}
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="p-5 col">
+        <div class="p-2 flex-column">
+          <label title="pp-search" type="text">
+            Search
+            <input id="pp-search-imput" class="input-group rounded-3" type="text" placeholder="">
+          </label>
+        </div>
+        <div class="scrollable rounded-3">
 
-                        {% for i in v.staff %}
-                        {% if i.position == '1.1' %}
-                        +
-                        {% elif i.position == '1.2' %}
-                        *
-                        {% elif i.position == '1.3' %}
-                        ^
-                        {% else %}
-                        _
-                        {% endif %}
-                        {% endfor %}
-                      </div>
-                    </td>
+          <div class="container shadow">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Comapny</th>
+                  <th scope="col">EID</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Rank</th>
+                  <th scope="col">License Level</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for id , p in personnel.items() %}
+                <tr>
+                  <th scope="row">{{ p.company_abr }}</th>
+                  <th scope="row">{{ id }}</th>
+                  <td id="table-phone">{{ p.name}}</td>
+                  {% if p.position == '1.1' %}
+                  <td id="table-address">{{ p.rank }}</td>
+                  <td>
+                    <div class="badge bg-primary">Paramedic</div>
+                  </td>
+                  {% elif p.position == '1.2' %}
+                  <td id="table-address">{{ p.rank }}</td>
+                  <td>
+                    <div class="badge bg-danger">Advanced</div>
+                  </td>
+                  {% elif p.position == '1.3' %}
+                  <td id="table-address">{{ p.rank }}</td>
+                  <td>
+                    <div class="badge bg-success">Basic</div>
+                  </td>
+                  {% else %}
+                  <td id="table-address">{{ p.rank }}</td>
+                  <td>
+                    <div class="badge bg-dark">Non-Medical</div>
+                  </td>
+
                   {% endif %}
                 </tr>
-              {% endfor %}
-            </tbody>
-          </table>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
-    <div class="p-5 col">
-      <div class="scrollable rounded-3">
-
-        <div class="container shadow">
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">Comapny</th>
-                <th scope="col">EID</th>
-                <th scope="col">Name</th>
-                <th scope="col">Rank</th>
-                <th scope="col">License Level</th>
-              </tr>
-            </thead>
-            <tbody>
-              {% for id , p in personnel.items() %}
-              <tr>
-                <th scope="row">{{ p.company_abr }}</th>
-                <th scope="row">{{ id }}</th>
-                <td id="table-phone">{{ p.name}}</td>
-                {% if p.position == '1.1' %}
-                <td id="table-address">{{ p.rank }}</td>
-                <td>
-                  <div class="badge bg-primary">Paramedic</div>
-                </td>
-                {% elif p.position == '1.2' %}
-                <td id="table-address">{{ p.rank }}</td>
-                <td>
-                  <div class="badge bg-danger">Advanced</div>
-                </td>
-                {% elif p.position == '1.3' %}
-                <td id="table-address">{{ p.rank }}</td>
-                <td>
-                  <div class="badge bg-success">Basic</div>
-                </td>
-                {% else %}
-                <td id="table-address">{{ p.rank }}</td>
-                <td>
-                  <div class="badge bg-dark">Non-Medical</div>
-                </td>
-
-                {% endif %}
-              </tr>
-              {% endfor %}
-            </tbody>
-          </table>
+    <div class="mt-5 p-4 bg-dark text-white text-center">
+      <div class="d-flex justify-content">
+        <div class="nav-link text-center justify-content-start">
+          <img class="rounded-circle" src="{{ url_for('static', filename='profile_pics/jessemeekins.jpeg') }}"alt="" class="rounded">
         </div>
       </div>
-    </div>
-  </div>
-  
-
-  
-  
-  <div class="mt-5 p-4 bg-dark text-white text-center">
-    <div class="d-flex justify-content">
-      <div class="nav-link text-center justify-content-start">
-        <img class="rounded-circle" src="{{ url_for('static', filename='profile_pics/jessemeekins.jpeg') }}"alt="" class="rounded">
+      <div class="d-flex justify-content-center">
+        <a title="github" rel="noopener" class="nav-link" href="https://github.com/jessemeekins/XML_REPO_TELESTAFF.git" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+          </svg>
+        </a>
       </div>
     </div>
-    <div class="d-flex justify-content-center">
-      <a title="github" rel="noopener" class="nav-link" href="https://github.com/jessemeekins/XML_REPO_TELESTAFF.git" target="_blank">
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
-          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-        </svg>
-      </a>
-    </div>
-  </div>
 
-        
-  <script src="{{url_for('static', filename='script.js')}}"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-</body>
+          
+    <script src="{{url_for('static', filename='script.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
 </html>

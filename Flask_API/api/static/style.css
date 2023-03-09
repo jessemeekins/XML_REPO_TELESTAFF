@@ -40,3 +40,15 @@ img {
    justify-content: start;
    
 }
+.filterContainer {
+   overflow: hidden;
+ }
+ 
+.filterDiv {
+display: none; /* Hidden by default */
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+   display: block;
+}
