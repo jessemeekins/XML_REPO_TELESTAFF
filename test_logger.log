@@ -30,3 +30,47 @@ INFO:werkzeug:127.0.0.1 - - [09/Mar/2023 06:21:59] "[36mGET /static/style.css H
 INFO:werkzeug:127.0.0.1 - - [09/Mar/2023 06:21:59] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
 INFO:werkzeug:127.0.0.1 - - [09/Mar/2023 06:21:59] "[36mGET /static/profile_pics/jessemeekins.jpeg HTTP/1.1[0m" 304 -
 INFO:werkzeug:127.0.0.1 - - [09/Mar/2023 06:21:59] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/utils/data.py', reloading
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/utils/data.py', reloading
+INFO:werkzeug: * Restarting with watchdog (fsevents)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 805-386-414
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/utils/data.py', reloading
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/utils/data.py', reloading
+INFO:werkzeug: * Restarting with watchdog (fsevents)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 805-386-414
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/utils/companies.py', reloading
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/utils/companies.py', reloading
+INFO:werkzeug: * Restarting with watchdog (fsevents)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 805-386-414
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/utils/companies.py', reloading
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/utils/companies.py', reloading
+INFO:werkzeug: * Restarting with watchdog (fsevents)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 805-386-414
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/utils/companies.py', reloading
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/utils/companies.py', reloading
+INFO:werkzeug: * Restarting with watchdog (fsevents)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 805-386-414
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/utils/companies.py', reloading
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/utils/companies.py', reloading
+INFO:werkzeug: * Restarting with watchdog (fsevents)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 805-386-414
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/utils/companies.py', reloading
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/utils/companies.py', reloading
+INFO:werkzeug: * Restarting with watchdog (fsevents)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 805-386-414
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/utils/companies.py', reloading
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/utils/companies.py', reloading
+INFO:werkzeug: * Restarting with watchdog (fsevents)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 805-386-414
+INFO:werkzeug: * Detected change in '/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/api/utils/companies.py', reloading
+INFO:werkzeug: * Restarting with watchdog (fsevents)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 805-386-414
