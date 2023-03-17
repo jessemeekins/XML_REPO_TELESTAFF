@@ -14,6 +14,7 @@ class DataSource(ABC):
     @abstractmethod
     def retrieve_data(self): 
         ...
+
         
 class XMLFileDataSource(DataSource):
     """Methods to Retrieve XML file types"""
@@ -27,6 +28,7 @@ class XMLFileDataSource(DataSource):
         tree = ET.parse('/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/XML_EXPORT_DATA/XML EXPORT 3_7_22.xml')
         root = tree.getroot()
         return root
+    
     
 class XLSXFileDataSource(DataSource):
     """Methods for retrieving XLSX file types"""
@@ -192,6 +194,7 @@ def execute_order() -> StrategyExportFactory:
         if export_type in strategy:
             return strategy[export_type]
         print('Unknown export type...')
+        
 
 def main(facorty: StrategyExportFactory) -> None:
 
