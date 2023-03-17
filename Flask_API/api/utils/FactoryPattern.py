@@ -2,22 +2,22 @@
 from typing import Protocol
 from companies import FIRST_RESPONERS_COMPANIES
 from abc import ABC, abstractmethod
-from time import sleep
+
+
 
 class DataSource(ABC):
     @abstractmethod
-    def connect(self):
-        print('[*] Connecting to Data Source...')
+    def connect(self): ...
 
     @abstractmethod
-    def retrieve_data(self):
-        pass
-
+    def retrieve_data(self): ...
+        
 class XMLFileDataSource(DataSource):
     def connect(self):
         print("[*]"*10)
         
     def retrieve_data(self):
+        print('[*] Connecting to Data Source...')
         import xml.etree.ElementTree as ET
         tree = ET.parse('/Users/jessemeekins/Documents/VS Code (original)/XML_REPO_TELESTAFF/Flask_API/XML_EXPORT_DATA/XML EXPORT 3_7_22.xml')
         root = tree.getroot()
@@ -30,26 +30,26 @@ class XLSXFileDataSource(DataSource):
     def retrieve_data(self):
         print('[*] Retreiving data from XLSX file database...')
 
+
 class DataProccessing(ABC):
     def __init__(self, data_source: DataSource):
         self.data_source = data_source
 
     @abstractmethod
-    def parse_records(self, records) -> dict:
-        pass
+    def _define_fields(self, record) -> dict: ...
 
     @abstractmethod
-    def apply_data_strategy(self, records: dict) -> dict:
-        pass
+    def personnel_records(self, records) -> dict: ...
+
+    @abstractmethod
+    def apply_data_strategy(self, records: dict) -> dict: ...
+
+    @abstractmethod
+    def create_dictionary(self, records: dict) -> dict: ...
     
     @abstractmethod
-    def create_dictionary(self, records: dict) -> dict:
-        pass
-
-    @abstractmethod
-    def add_records_to_dictionary(self, records: dict) -> dict:
-        pass
-
+    def add_records_to_dictionary(self, records: dict) -> dict: ...
+    
     def proccess(self, filetype: str):
 
         if filetype:
